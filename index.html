@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="om">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waliin Live</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="loginPage" class="page">
+    <div class="card">
+      <h1>🎥 Waliin Live</h1>
+      <p>Room uumii ykn Room keessa seeni</p>
+
+      <input id="nameInput" type="text" placeholder="Maqaa kee galchi">
+
+      <button onclick="createRoom()">➕ Room Uumi</button>
+
+      <input id="roomInput" type="text" placeholder="Room ID galchi">
+      <button onclick="joinRoom()">🚪 Room Seeni</button>
+
+      <p id="loginStatus"></p>
+    </div>
+  </div>
+
+  <div id="roomPage" class="page hidden">
+
+    <header>
+      <div>
+        <h2>🎥 Waliin Live</h2>
+        <small id="roomInfo"></small>
+      </div>
+
+      <div class="headerButtons">
+        <button onclick="copyRoomLink()">🔗 Share</button>
+        <button onclick="openSettings()">⚙️</button>
+        <button onclick="leaveRoom()">🚪 Ba'i</button>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="roomArea">
+
+        <div class="roomTop">
+          <h3>Seats</h3>
+          <span id="userCount">0 users</span>
+        </div>
+
+        <div id="seats" class="seats"></div>
+
+        <div class="controls">
+          <button onclick="toggleMic()" id="micBtn">🎤 Mic</button>
+          <button onclick="toggleCamera()" id="cameraBtn">📷 Camera</button>
+          <button onclick="takeSeat()">💺 Seat</button>
+          <button onclick="leaveSeat()">🚶 Seat keessaa ba'i</button>
+        </div>
+
+        <div id="videoArea" class="videoArea"></div>
+
+      </section>
+
+      <aside class="sidePanel">
+
+        <div class="panel">
+          <h3>👥 Namoota</h3>
+          <div id="usersList"></div>
+        </div>
+
+        <div class="panel chatPanel">
+          <h3>💬 Chat</h3>
+
+          <div id="messages"></div>
+
+          <div class="chatInput">
+            <input id="messageInput" placeholder="Ergaa barreessi...">
+            <button onclick="sendMessage()">➤</button>
+          </div>
+        </div>
+
+      </aside>
+
+    </main>
+  </div>
+
+  <div id="settingsModal" class="modal hidden">
+    <div class="modalBox">
+      <h2>⚙️ Settings</h2>
+
+      <label>Room Name</label>
+      <input id="roomNameInput" placeholder="Maqaa Room">
+
+      <label>Room Privacy</label>
+      <select id="privacyInput">
+        <option value="public">Public</option>
+        <option value="private">Private</option>
+      </select>
+
+      <button onclick="saveSettings()">💾 Save</button>
+      <button onclick="closeSettings()">Cufi</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+          </html>
