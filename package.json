@@ -1,7 +1,7 @@
 {
-  "name": "waliin-live-server",
+  "name": "waliinlive
   "version": "1.0.0",
-  "description": "Waliin Live unlimited room and seat system",
+  "description": "WaliinLive unlimited room and seat system",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
